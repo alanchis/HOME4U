@@ -69,10 +69,20 @@
 
           <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
             <img src="{{sale.image}}" alt="house." class="lg:col-span-2 lg:row-span-2 rounded-lg">
-            <a href="/sales/{{sale._id}}/edit">Edit</a></span>
-            <a href="/sales/{{sale._id}}/edit">Remove</a></span>
 
-    
+                <div>
+
+                <button type="button" class="inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emerald-300 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/sales/{{sale._id}}/edit">Edit</a></button>
+
+    	        <form action="/sales/{{sale._id}}/delete" method="POST">
+                <button type="submit" class="inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emerald-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Remove property</button>
+		    </form>
+
+                </div>
+
+
+
+
           </div>
         </div>
 
@@ -87,7 +97,7 @@
 
             <div class="mt-4 prose prose-sm text-gray-500">
               <p><strong>State:</strong> {{sale.state}}</p>
-              <p><strong>City:</strong> City: {{sale.city}}</p>
+              <p><strong>City:</strong>  {{sale.city}}</p>
               <p><strong>Neighborhood:</strong>  {{sale.neighborhood}}</p>
             </div>
           </div>

@@ -17,9 +17,17 @@ router.get("/", salesController.getSales)
 router.get("/new",routeGuard.privateAreas,salesController.getNew)
 router.post("/new",salesController.postNew)
 
-        // C. Update/Edit
+        // C. Read
+router.get("/:id",routeGuard.privateAreas,salesController.getSingleSale)
 
-router.get("/:saleID",routeGuard.privateAreas,salesController.getSingleSale)
+
+        // D. Update/Edit
+router.get("/:id/edit", routeGuard.privateAreas, salesController.editSale)
+router.post("/:id/edit", routeGuard.privateAreas,salesController.editSaleForm)
+
+        // E. Remove
+router.post("/:id/delete",routeGuard.privateAreas, salesController.deleteSales)
+
 
 
 
