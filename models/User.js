@@ -1,4 +1,4 @@
-// ./models/User.js
+
 
 // 1. IMPORTACIONES
 const mongoose = require("mongoose")

@@ -21,7 +21,7 @@ exports.registerForm = async (req, res) => {
 	if(!username || !email || !password){
 
 		return res.render("auth/register", {
-			errorMessage: "Todos los campos deben llenarse."
+			errorMessage: "All fields all required."
 		})
 	}	
 

@@ -1,0 +1,127 @@
+{{!-- create-form.hbs --}}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  <div class="bg-emerald-100 rounded-2xl max-w-3x2 mx-auto shadow-xl px-10 py-10 my-20">
+    <!-- Content goes here -->
+    <form action="/sales/new" method="POST" >
+      <div class="bg-emerald-100 px-4 py-5 border-b border-gray-200 sm:px-6">
+        <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+          <div class="ml-4 mt-2">
+            <h3 class="text-5xl leading-6 font-extrabold text-emerald-800">Property for Sale</h3>
+          </div>
+          <div class="ml-4 mt-2 flex-shrink-0">
+            <button type="submit" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-xl font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create </button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6">
+
+              <div class="space-y-1">
+                <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
+                <div class="mt-1">
+                  <input id="name" name="name" type="text" placeholder="Project's name" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                </div>
+              </div>
+            
+              <div class="flex place-content-between">
+                <span class="w-1/2 mr-10" >
+                  <label for="type" class="block text-sm font-medium text-gray-700" > Type: </label>
+                  <div class="mt-1">
+                    <input id="type" name="type" type="text" required placeholder="house or apartment" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+
+                <span class="w-1/2">
+                  <label for="state" class="block text-sm font-medium text-gray-700"> State </label>
+                  <div class="mt-1">
+                    <input id="state" name="state" type="text" required placeholder="State"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+              </div>
+
+              <div class="flex place-content-between">
+                <span class="w-1/2 mr-10" >
+                  <label for="city" class="block text-sm font-medium text-gray-700" > City: </label>
+                  <div class="mt-1">
+                    <input id="city" name="city" type="text" required placeholder="DF" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+
+                <span class="w-1/2">
+                  <label for="neighborhood" class="block text-sm font-medium text-gray-700"> Neighborhood </label>
+                  <div class="mt-1">
+                    <input id="neighborhood" name="neighborhood" type="text" required placeholder="Escandon"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+              </div>
+
+              <div class="flex place-content-between">
+                <span>
+                  <label for="area" class="block text-sm font-medium text-gray-700">Area</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm"> </span>
+                      </div>
+                      <input type="number" name="area" id="area" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm"  >
+                      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm" > M2 </span>
+                      </div>
+                    </div>
+                </span>
+
+                <span>
+                  <label for="bedrooms" class="text-sm font-medium text-gray-700"> Bedrooms </label>
+                  <div class="mt-1">
+                    <input id="bedrooms" name="bedrooms" type="number" min="0" value="0" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+
+                <span>
+                  <label for="bathrooms" class="text-sm font-medium text-gray-700"> Bathrooms </label>
+                  <div class="mt-1">
+                    <input id="bathrooms" name="bathrooms" type="number" min="0" value="0" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+
+                <span>
+                  <label for="parking" class="text-sm font-medium text-gray-700"> Parking spots </label>
+                  <div class="mt-1">
+                    <input id="parking" name="parking" type="number" min="0" value="0" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </span>
+              </div>
+
+            <span>
+                  <label for="cost" class="block text-sm font-medium text-gray-700">Cost</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm"> $ </span>
+                      </div>
+                      <input type="number" name="cost" id="cost" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm" placeholder="0.00" aria-describedby="price-currency">
+                      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                        <span class="text-gray-500 sm:text-sm" id="price-currency"> MXN </span>
+                      </div>
+                    </div>
+                </span>              
+
+              
+
+              <div class="space-y-1">
+                <label for="description" class="block text-sm font-medium text-gray-700"> Description </label>
+                <div class="mt-1">
+                  <textarea id="description" name="description" type="text" maxlength="200" required Placeholder="Only 200 characters" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
+                <div class="mt-1">
+                  <input id="image" name="image" type="text" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                </div>
+              </div>
+              <hr>
+      </div>
+    </form>
+  </div>
+</div>
+

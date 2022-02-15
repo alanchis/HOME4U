@@ -1,6 +1,6 @@
 // ./routes/auth.js
 
-// 1. IMPORTACIONES
+// 1. IMPORTS
 const express		= require("express")
 const router		= express.Router()
 
@@ -29,5 +29,5 @@ router.get("/logout", authController.logout)
 
 
 
-// 3. EXPORTACIÓN
+// 3. EXPORTS
 module.exports = router

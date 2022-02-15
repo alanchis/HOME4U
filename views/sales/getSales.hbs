@@ -1,0 +1,27 @@
+<h1>Este es el get sales</h1>
+
+
+
+
+<button type="button" href="/sales/new" class="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-black bg-emerald-300 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/sales/new">Add property</a>
+  <!-- Heroicon name: solid/plus-sm -->
+  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+  </svg>
+</button>
+
+
+<hr />
+{{#each allSales}}
+  <a href="/sales/{{_id}}">Name:{{name}}</a>
+  <h2>Type: {{type}}</h2>
+  <h2>Cost: {{cost}}</h2>
+  <h2>Area: {{area}}</h2>
+  <h2>City:{{city}}</h2>
+  <h2>Neighborhood:{{neighborhood}}</h2>
+  <a href="/sales/{{_id}}">Details</a>
+  <a href="/sales/edit/{{_id}}">Edit</a>
+  <img src={{image}} alt="foto" />
+  <hr />
+
+{{/each}}

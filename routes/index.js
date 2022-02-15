@@ -1,6 +1,6 @@
 // ./routes/index.js
 
-// 1. IMPORTACIONES
+// 1. IMPORTS
 const express			= require("express")
 const router			= express.Router()
 
@@ -13,10 +13,14 @@ const routeGuard = require("./../middlewares/route-guard")
 // A. HOME
 router.get("/", indexController.getHome)
 
+router.get("/contact", indexController.getContact)
+
+router.get("/aboutus",indexController.getAboutUs)
+
 // B. profile
 router.get("/profile", routeGuard.privateAreas, indexController.getProfile)
 
 
 
-// 3. EXPORTACIÓN
+// 3. EXPORTS
 module.exports = router
