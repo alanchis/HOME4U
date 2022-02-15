@@ -28,6 +28,17 @@ exports.postNew = async (req, res) => {
 }
 
 
+exports.getSingleSale = async function (req, res) {
+
+  const {saleID} = req.params
+  console.log(`este es el salesID ${saleID}`)
+  const getSingleSale = await Sales.findById(saleID)
+
+res.render("sales/salesDetails",{ sale: getSingleSale})
+
+}
+
+
 
 
 

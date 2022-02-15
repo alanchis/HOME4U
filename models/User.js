@@ -11,7 +11,8 @@ const userSchema = mongoose.Schema({
 		type: String,
 		trim: true, // No puedes guardar en base de datos si mandas un dato con espacios en blanco
 		required: true,
-        unique: true
+		unique:true
+        
 	},
 	email: {
 		type: String,
@@ -24,7 +25,12 @@ const userSchema = mongoose.Schema({
 	password: {
 		type: String,
 		required: true
-	}
+	},
+	date: {
+		type: Date,
+		required: true,
+		default: Date.now
+	},
 }, 	{
 		timestamps: true // Guardar la fecha y hora en la cual se creó un documento
 	}

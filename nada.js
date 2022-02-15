@@ -26,3 +26,4 @@ parking: 1
 state: "CDMX"
 description:"Luxurious apartment near Av. Tlapan and Av. Rio Churubusco" 
 image:"https://drive.google.com/file/d/1ECNVnqXIr00AEGl_kQCYir6ZeAKmB46w/view?usp=sharing"
+"https://www.triada.com.pe/noticias/wp-content/uploads/2019/07/triada-aprovechar-espacios-departamento-pequeno.jpg"

@@ -13,7 +13,7 @@ exports.register = (req, res) => {
 exports.registerForm = async (req, res) => {
 
 	// 1. VERIFICAR QUE LOS DATOS DEL FORMULARIO LLEGUEN AL CONTROLLER
-	const { username, email, password } = req.body
+	const { username, email, password, date } = req.body
 
 
 	// --- VALIDACIONES ---
@@ -25,13 +25,15 @@ exports.registerForm = async (req, res) => {
 		})
 	}	
 
+	
+
 	// B. QUE LA CONTRASEA SEA SÓLIDA (Al menos 6 caracteres, un número, una minúscula y una mayúscula)
 	const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
 
 	if(!regex.test(password)){
 		
 		return res.render("auth/register", {
-			errorMessage: "Tu contraseña debe incluir 6 caracteres, al menos un número, una minúscula y una mayúscula."
+			errorMessage: "Your password must include 6 characters, at least one number, one lowercase and one uppercase."
 		})
 
 	}
@@ -56,7 +58,7 @@ exports.registerForm = async (req, res) => {
 	
 		console.log(newUser)
 	
-		return res.redirect("/profile")
+		return res.redirect("/auth/login")
 
 	} catch (error) {
 		
@@ -100,7 +102,7 @@ exports.loginForm = async (req, res) => {
 	if(!foundUser){
 
 		res.render("auth/login", {
-			errorMessage: "Email o contraseña sin coincidencia."
+			errorMessage: "No matches for the email, please sign up."
 		})
 
 		return
@@ -113,7 +115,7 @@ exports.loginForm = async (req, res) => {
 	if(!verifiedPass){
 
 		res.render("auth/login", {
-			errorMessage: "Email o contraseña incorrecta."
+			errorMessage: "Wrong email or password."
 		})
 
 		return

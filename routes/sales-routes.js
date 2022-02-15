@@ -9,15 +9,18 @@ const routeGuard = require("../middlewares/route-guard")
 
 
 // 2. ROUTER
-// A. HOME
+        // A. HOME
 router.get("/", salesController.getSales)
 
-router.get("/new",salesController.getNew)
 
+        // B. Create
+router.get("/new",routeGuard.privateAreas,salesController.getNew)
 router.post("/new",salesController.postNew)
 
-// B. profile
-//router.get("/profile", routeGuard.privateAreas, indexController.getProfile)
+        // C. Update/Edit
+
+router.get("/:saleID",routeGuard.privateAreas,salesController.getSingleSale)
+
 
 
 

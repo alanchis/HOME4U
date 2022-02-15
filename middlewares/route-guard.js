@@ -20,6 +20,8 @@ exports.privateAreas = (req,res,next) => {
     // SI EL USUARIO NO LOGGEADO INTENTA ENTRAR... REDIRIGIRLO AL LOGIN
     if(!req.session.currentUser){
         res.redirect("/auth/login")
+       
+        
         return
     }
     next()
