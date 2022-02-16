@@ -1,6 +1,6 @@
 
 
-//HOUSE 1
+//HOUSE 1 Zafiro
 type: 'house'
 cost: 910000
 city: "queretaro"
