@@ -13,32 +13,27 @@ exports.getSales = async  (req, res) => {
 
 
     // CREATE (CONTROLLERS)
-
 exports.getNew = (req, res) => {
     res.render("sales/createSales")
 }
 
 exports.postNew = async (req, res) => {
   const { name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+
   try {
     const newProperty = await Sales.create({
-      name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image
-    });
-
-    console.log(newProperty);
-
+      name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image });
     return res.redirect("/sales");
+
   } catch (error) {
     console.log(error);
-  }
-}
+  }}
 
     // READ (CONTROLLERS)
 exports.getSingleSale = async function (req, res) {
   const {id} = req.params
   const getSingleSale = await Sales.findById(id)
-  return res.render("sales/salesDetails",{ sale: getSingleSale})
-}
+  return res.render("sales/salesDetails",{ sale: getSingleSale})}
 
 
 
@@ -48,40 +43,17 @@ exports.editSale = async (req, res) => {
 	const singleSale = await Sales.findById(id)
   res.render(`sales/editSales`, {
     singleSale,
-	})
-}
+	})}
 
 
 exports.editSaleForm = async (req, res) => {
 const { 
-       name,
-       type,
-       cost,
-       city,
-       neighborhood,
-       area,
-       bedrooms,
-       bathrooms,
-       parking,
-       state,
-       description,
-       image } = req.body;
+       name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
 const {id} = req.params
 
 await Sales.findByIdAndUpdate(
   id,
-  { name,
-    type,
-    cost,
-    city,
-    neighborhood,
-    area,
-    bedrooms,
-    bathrooms,
-    parking,
-    state,
-    description,
-    image },
+  { name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image },
   { new: true }
 )
 return res.redirect(`/sales/${id}`)}
@@ -92,7 +64,7 @@ return res.redirect(`/sales/${id}`)}
 // REMOVE  (CONTROLLERS)
 exports.deleteSales = async (req, res) => {
   const { id } = req.params
-  console.log(`este es el id de delete ${id}`)
+ 
   
   try {
   const deletedSale = await Sales.findByIdAndDelete(id)

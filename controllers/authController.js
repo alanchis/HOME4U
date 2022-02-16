@@ -29,11 +29,11 @@ exports.registerForm = async (req, res) => {
 
 
 
-	// 2. ENCRIPTAR CONTRASEÑA
+	// 2. ENCRYPT PASSWORD
 	const salt = await bcryptjs.genSalt(10)
 	const hashedPassword = await bcryptjs.hash(password, salt)
 
-		// GUARDAR EN BASE DE DATOS
+		// SAVE IN DATABASE
 	try {
 		const newUser = await User.create({
 			username,
@@ -46,10 +46,10 @@ exports.registerForm = async (req, res) => {
 		console.log(error)
 		console.log(error.errors)
 
-		// CONFIRMAR SI EL ERROR VIENE DE BASE DE DATOS
+		// CONFIRM IF THE ERROR COMES FROM THE DATABASE
 		if (error instanceof mongoose.Error.ValidationError){			
 			return res.render("auth/register", {
-				errorMessage: "Por favor utiliza un correo electrónico real."
+				errorMessage: "Please use a real e-mail."
 			})
 		}	
 	}
@@ -63,10 +63,10 @@ exports.login = (req, res) => {
 exports.loginForm = async (req, res) => {
 
 
-	// 1. OBTENCIÓN DE DATOS DEL FORMULARIO
+	// 1. GET DE FORM
 	const { email, password } = req.body
 
-	// 2. VALIDACIÓN DE USUARIO ENCONTRADO EN BD
+	// 2. USER VALIDATION - USER FOUND IN DATABASE
 
 	const foundUser = await User.findOne({ email })
 
@@ -79,7 +79,7 @@ exports.loginForm = async (req, res) => {
 		return
 	}
 
-	// 3. VALIDACIÓN DE CONTRASEÑA
+	// 3. PASSWORD VALIDATION
 
 	const verifiedPass = await bcryptjs.compareSync(password, foundUser.password)
 
@@ -93,15 +93,15 @@ exports.loginForm = async (req, res) => {
 
 	}
 
-	// 4. GESTIÓN DE SESIÓN. SI LA CONTRESEÑA COINCIDE ENTONCES CREAR UN RECORDATORIO (COOKIE) EN EL NAVEGADOR DE QUE SÍ ES EL USUARIO
+	// 4. SESSION MANAGER. IF THE PASSWORD MATCHES, CREATE A COOKIE 
 	req.session.currentUser = {
 		_id: foundUser._id,
 		username: foundUser.username,
 		email: foundUser.email,
-		msg: "Este es su ticket"
+		msg: "you are logged in"
 	}
 
-	// 5. REDIRECCIÓN AL PROFILE
+	// 5. REDIRECT TO PROFILE
 	return res.redirect("/profile")
 
 }

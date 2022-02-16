@@ -24,7 +24,7 @@ exports.getRentals = async  (req, res) => {
 		  name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image
 		});
 	
-		console.log(newPropertyForRent);
+	
 	
 		return res.redirect("/rentals");
 	  } catch (error) {
@@ -65,11 +65,11 @@ exports.editRent = async (req, res) => {
   // REMOVE  (CONTROLLERS)
 exports.deleteRents = async (req, res) => {
 	const { id } = req.params
-	console.log(`este es el id de delete ${id}`)
+	
 	
 	try {
 	const deletedRents = await Rentals.findByIdAndDelete(id)
-	console.log(deletedRents)
+	
 	res.redirect("/rentals")
 	
 	} catch (error) {
