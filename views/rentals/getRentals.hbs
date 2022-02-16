@@ -1,1 +1,46 @@
-Este es el get rentals
+
+
+
+<div class="pb-5">
+  <h3 class="text-xl leading-6 font-medium text-gray-900">For Rent Postings</h3>
+  
+</div>
+
+<span>
+
+</span>
+
+<button type="button" href="/rentals/new" class="inline-flex items-center p-2 border border-transparent rounded-full shadow-sm text-black bg-emerald-300 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/rentals/new">Add property for rent</a>
+  <!-- Heroicon name: solid/plus-sm -->
+  <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+  </svg>
+</button>
+
+
+
+{{#each allRents}}
+<div class="bg-white">
+  <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="sr-only">For rent</h2>
+
+    <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <a href="/rentals/{{_id}}" class="group">
+        <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+         <img src={{image}} alt="foto" />
+         View details
+        </div>
+      </a>
+          <div>
+            <h3 class="mt-1 text-xl text-gray-700"><strong>FOR RENT</strong></h3>
+            <h3 class="mt-1 text-xl text-gray-700"><strong>Project: </strong> {{name}}</h3>
+            <h3 class="mt-1 text-xl text-gray-700"><strong>State: </strong> {{state}}</h3>
+            <h3 class="mt-1 text-xl text-gray-700"><strong>Cost: </strong> ${{cost}} MXN</h3>
+            </div>
+         </div>
+  </div>
+</div>
+{{/each}}
+
+    
+  

@@ -1,0 +1,131 @@
+
+<button type="button" href="/rentals" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-emerald-300 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/rentals">Go back</a></button>
+
+
+
+
+
+<hr />
+
+
+
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/typography'),
+    ],
+  }
+  ```
+-->
+<div class="bg-white">
+  <div class="pt-6 pb-16 sm:pb-24">
+    <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ol role="list" class="flex items-center space-x-4">
+        <li>
+          <div class="flex items-center">
+            <a href="/rentals" class="mr-4 text-sm font-medium text-gray-900"> For Rent </a>
+            <svg viewBox="0 0 6 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-auto text-gray-300">
+              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
+            </svg>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-center">
+            <a href="#" class="mr-4 text-sm font-medium text-gray-900"> {{rent.state}} </a>
+            <svg viewBox="0 0 6 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-auto text-gray-300">
+              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
+            </svg>
+          </div>
+        </li>
+
+        <li class="text-sm">
+          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> {{rent.neighborhood}} </a>
+        </li>
+      </ol>
+    </nav>
+    <div class="mt-8 max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="lg:grid lg:grid-cols-12 lg:auto-rows-min lg:gap-x-8">
+        <div class="lg:col-start-8 lg:col-span-5">
+          <div class="flex justify-between">
+            <h1 class="text-xl font-medium text-gray-900">{{rent.name}}  ({{rent.type}})</h1>
+             
+            <p class="text-xl font-medium text-gray-900">$ {{rent.cost}}</p>
+          </div>
+   
+        </div>
+
+        <!-- Image gallery -->
+        <div class="mt-8 lg:mt-0 lg:col-start-1 lg:col-span-7 lg:row-start-1 lg:row-span-3">
+          <h2 class="sr-only">Images</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
+            <img src="{{rent.image}}" alt="house." class="lg:col-span-2 lg:row-span-2 rounded-lg">
+
+                <div>
+
+                <button type="button" class="inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emerald-300 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/rentals/{{rent._id}}/edit">Edit</a></button>
+
+    	        <form action="/rentals/{{rent._id}}/delete" method="POST">
+                <button type="submit" class="inline-flex items-center px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emerald-300 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Remove property</button>
+		    </form>
+
+                </div>
+
+
+
+
+          </div>
+        </div>
+
+        <div class="mt-8 lg:col-span-5">
+          <form>
+            <button type="submit" class="mt-8 w-full bg-emerald-300 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="#">I'm Interested</a></button>
+          </form>
+
+          <!-- Product details -->
+          <div class="mt-10">
+            <h2 class="text-sm font-medium text-gray-900">Location</h2>
+
+            <div class="mt-4 prose prose-sm text-gray-500">
+              <p><strong>State:</strong> {{rent.state}}</p>
+              <p><strong>City:</strong>  {{rent.city}}</p>
+              <p><strong>Neighborhood:</strong>  {{rent.neighborhood}}</p>
+            </div>
+          </div>
+
+        <div class="mt-8 border-t border-gray-200 pt-8">
+            <h2 class="text-sm font-medium text-gray-900">Features</h2>
+
+            <div class="mt-4 prose prose-sm text-gray-500">
+              <p><strong>Area:</strong> {{rent.area}}</p>
+              <p><strong>Bedrooms:</strong>  {{rent.bedrooms}}</p>
+              <p><strong>Bathrooms:</strong>  {{rent.badrooms}}</p>
+              <p><strong>Parking spots:</strong>  {{rent.parking}}</p>
+            </div>
+          </div>
+
+          <div class="mt-8 border-t border-gray-200 pt-8">
+            <h2 class="text-sm font-medium text-gray-900">Description</h2>
+
+            <div class="mt-4 prose prose-sm text-gray-500">
+                <p>{{rent.description}}</p>
+            </div>
+            
+          
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

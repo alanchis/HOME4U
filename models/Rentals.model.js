@@ -59,7 +59,7 @@ const userSchema = mongoose.Schema({
     },
     description: {
         type: String,
-         
+        trim: true, 
         
     },
     image: {
@@ -74,7 +74,7 @@ const userSchema = mongoose.Schema({
 
 
 // 3. MODEL
-const Sales = mongoose.model("for sale", userSchema)
+const Rentals = mongoose.model("for rent", userSchema)
 
 // 4. EXPORTACIÓN
-module.exports = Sales
+module.exports = Rentals

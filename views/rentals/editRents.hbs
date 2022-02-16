@@ -1,6 +1,6 @@
 
 
-<button type="button"  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/sales" class="mr-4 text-sm font-medium text-gray-900"> Go back</a></button>
+<button type="button"  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="/rentals" class="mr-4 text-sm font-medium text-gray-900"> Go back</a></button>
 
 
 {{!-- create-form.hbs --}}
@@ -8,11 +8,11 @@
   <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
   <div class="bg-emerald-100 rounded-2xl max-w-3x2 mx-auto shadow-xl px-10 py-10 my-20">
     <!-- Content goes here -->
-    <form action="/sales/{{singleSale._id}}/edit" method="POST" >
+    <form action="/rentals/{{singleRent._id}}/edit" method="POST" >
       <div class="bg-emerald-100 px-4 py-5 border-b border-gray-200 sm:px-6">
         <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
           <div class="ml-4 mt-2">
-            <h3 class="text-5xl leading-6 font-extrabold text-emerald-800">Edit property for sale</h3>
+            <h3 class="text-5xl leading-6 font-extrabold text-emerald-800">Edit property for rent</h3>
           </div>
           <div class="ml-4 mt-2 flex-shrink-0">
             <button type="submit" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-xl font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit </button>
@@ -24,7 +24,7 @@
               <div class="space-y-1">
                 <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
                 <div class="mt-1">
-                  <input id="name" name="name" type="text" value="{{singleSale.name}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                  <input id="name" name="name" type="text" value="{{singleRent.name}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
             
@@ -32,14 +32,14 @@
                 <span class="w-1/2 mr-10" >
                   <label for="type" class="block text-sm font-medium text-gray-700" > Type: </label>
                   <div class="mt-1">
-                    <input id="type" name="type" type="text" required value="{{singleSale.type}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="type" name="type" type="text" required value="{{singleRent.type}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
 
                 <span class="w-1/2">
                   <label for="state" class="block text-sm font-medium text-gray-700"> State </label>
                   <div class="mt-1">
-                    <input id="state" name="state" type="text" required value="{{singleSale.state}}"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="state" name="state" type="text" required value="{{singleRent.state}}"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
               </div>
@@ -48,14 +48,14 @@
                 <span class="w-1/2 mr-10" >
                   <label for="city" class="block text-sm font-medium text-gray-700" > City: </label>
                   <div class="mt-1">
-                    <input id="city" name="city" type="text" required value="{{singleSale.city}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="city" name="city" type="text" required value="{{singleRent.city}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
 
                 <span class="w-1/2">
                   <label for="neighborhood" class="block text-sm font-medium text-gray-700"> Neighborhood </label>
                   <div class="mt-1">
-                    <input id="neighborhood" name="neighborhood" type="text" required value="{{singleSale.neighborhood}}"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="neighborhood" name="neighborhood" type="text" required value="{{singleRent.neighborhood}}"  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
               </div>
@@ -67,7 +67,7 @@
                       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span class="text-gray-500 sm:text-sm"> </span>
                       </div>
-                      <input type="number" name="area" id="area" value="{{singleSale.area}}" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm"  >
+                      <input type="number" name="area" id="area" value="{{singleRent.area}}" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm"  >
                       <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                         <span class="text-gray-500 sm:text-sm" > M2 </span>
                       </div>
@@ -77,51 +77,50 @@
                 <span>
                   <label for="bedrooms" class="text-sm font-medium text-gray-700"> Bedrooms </label>
                   <div class="mt-1">
-                    <input id="bedrooms" name="bedrooms" type="number" value="{{singleSale.bedrooms}}" min="0"  required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="bedrooms" name="bedrooms" type="number" value="{{singleRent.bedrooms}}" min="0"  required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
 
                 <span>
                   <label for="bathrooms" class="text-sm font-medium text-gray-700"> Bathrooms </label>
                   <div class="mt-1">
-                    <input id="bathrooms" name="bathrooms" type="number" min="0" value="{{singleSale.bathrooms}}" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="bathrooms" name="bathrooms" type="number" min="0" value="{{singleRent.bathrooms}}" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
 
                 <span>
                   <label for="parking" class="text-sm font-medium text-gray-700"> Parking spots </label>
                   <div class="mt-1">
-                    <input id="parking" name="parking" type="number" min="0" value="{{singleSale.parking}}" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input id="parking" name="parking" type="number" min="0" value="{{singleRent.parking}}" required class="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   </div>
                 </span>
               </div>
 
             <span>
-                  <label for="cost" class="block text-sm font-medium text-gray-700">Cost</label>
+                  <label for="monthlyRent" class="block text-sm font-medium text-gray-700"> Monthly rent</label>
                     <div class="mt-1 relative rounded-md shadow-sm">
                       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <span class="text-gray-500 sm:text-sm"> $ </span>
                       </div>
-                      <input type="number" name="cost" id="cost" value="{{singleSale.cost}}" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm"  aria-describedby="price-currency">
+                      <input type="number" name="monthlyRent" id="monthlyRent" value="{{singleRent.monthlyRent}}" class=" appearance-none focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full h-9 pl-7 pr-12 sm:text-sm border-gray-300 rounded-md shadow-sm"  aria-describedby="price-currency">
                       <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <span class="text-gray-500 sm:text-sm" id="price-currency"> MXN </span>
+                        <span class="text-gray-500 sm:text-sm" id="price-currency"> MXN / month</span>
                       </div>
                     </div>
                 </span>              
 
+              
               <div class="space-y-1">
                 <label for="description" class="block text-sm font-medium text-gray-700"> Description </label>
                 <div class="mt-1">
-                  <input id="description" name="description" type="text" value="{{singleSale.description}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                  <input id="description" name="description" type="text" value="{{singleRent.description}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
-              </div>              
-
-
+              </div>     
 
               <div class="space-y-1">
                 <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
                 <div class="mt-1">
-                  <input id="image" name="image" type="text" value="{{singleSale.image}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                  <input id="image" name="image" type="text" value="{{singleRent.image}}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
                 </div>
               </div>
               <hr>
@@ -129,4 +128,3 @@
     </form>
   </div>
 </div>
-

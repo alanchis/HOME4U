@@ -1,4 +1,4 @@
-// 1. CONTROLLERS
+// 1. MAIN CONTROLLERS
 
 const Sales = require("../models/Sales.model")
 
@@ -12,7 +12,7 @@ exports.getSales = async  (req, res) => {
   
 
 
-    // CREATE CONTROLLERS
+    // CREATE (CONTROLLERS)
 
 exports.getNew = (req, res) => {
     res.render("sales/createSales")
@@ -33,7 +33,7 @@ exports.postNew = async (req, res) => {
   }
 }
 
-    // READ CONTROLLERS
+    // READ (CONTROLLERS)
 exports.getSingleSale = async function (req, res) {
   const {id} = req.params
   const getSingleSale = await Sales.findById(id)
@@ -42,7 +42,7 @@ exports.getSingleSale = async function (req, res) {
 
 
 
-// UPDATE/EDIT  CONTROLLERS
+// UPDATE/EDIT  (CONTROLLERS)
 exports.editSale = async (req, res) => {
   const { id } = req.params
 	const singleSale = await Sales.findById(id)
@@ -53,31 +53,56 @@ exports.editSale = async (req, res) => {
 
 
 exports.editSaleForm = async (req, res) => {
-const { name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+const { 
+       name,
+       type,
+       cost,
+       city,
+       neighborhood,
+       area,
+       bedrooms,
+       bathrooms,
+       parking,
+       state,
+       description,
+       image } = req.body;
 const {id} = req.params
-console.log(`este es el req.body ${req.body}`)
+
 await Sales.findByIdAndUpdate(
   id,
-  { name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image },
+  { name,
+    type,
+    cost,
+    city,
+    neighborhood,
+    area,
+    bedrooms,
+    bathrooms,
+    parking,
+    state,
+    description,
+    image },
   { new: true }
 )
-res.redirect(`/sales/${id}`)}
+return res.redirect(`/sales/${id}`)}
 
 
 
-// REMOVE  CONTROLLERS
+
+// REMOVE  (CONTROLLERS)
 exports.deleteSales = async (req, res) => {
-const { id } = req.params
-console.log(`este es el id de delete ${id}`)
-
-try {
-const deletedSale = await Sales.findOneAndRemove(id)
-console.log(deletedSale)
-res.redirect("/sales")
-
-} catch (error) {
-console.log(error)
-res.render(`sales/${id}`)
-}}
+  const { id } = req.params
+  console.log(`este es el id de delete ${id}`)
+  
+  try {
+  const deletedSale = await Sales.findByIdAndDelete(id)
+  console.log(deletedSale)
+  res.redirect("/sales")
+  
+  } catch (error) {
+  console.log(error)
+  res.render(`sales/${id}`)
+  }}
+  
 
 

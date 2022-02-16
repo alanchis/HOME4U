@@ -1,4 +1,6 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
+
+
+
 <div class="pb-5">
   <h3 class="text-xl leading-6 font-medium text-gray-900">For Sale Postings</h3>
   
@@ -17,23 +19,7 @@
 
 
 
-{{!-- {{#each allSales}}
-  <a href="/sales/{{_id}}">Name:{{name}}</a>
-  <h2>Type: {{type}}</h2>
-  <h2>Cost: {{cost}}</h2>
-  <h2>Area: {{area}}</h2>
-  <h2>City:{{city}}</h2>
-  <h2>Neighborhood:{{neighborhood}}</h2>
-  <a href="/sales/{{_id}}">Details</a>
-  <a href="/sales/edit/{{_id}}">Edit</a>
-  <img src={{image}} alt="foto" />
-  <hr />
-
-{{/each}} --}}
-
-
 {{#each allSales}}
-
 <div class="bg-white">
   <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h2 class="sr-only">For sale</h2>
@@ -46,16 +32,14 @@
         </div>
       </a>
           <div>
+            <h3 class="mt-1 text-xl text-gray-700"><strong>FOR SALE</strong></h3>
             <h3 class="mt-1 text-xl text-gray-700"><strong>Project: </strong> {{name}}</h3>
             <h3 class="mt-1 text-xl text-gray-700"><strong>State: </strong> {{state}}</h3>
             <h3 class="mt-1 text-xl text-gray-700"><strong>Cost: </strong> ${{cost}} MXN</h3>
             </div>
-
-     
-    </div>
+         </div>
   </div>
 </div>
-
 {{/each}}
 
     

@@ -9,11 +9,27 @@ const routeGuard = require("./../middlewares/route-guard")
 
 
 // 2. ROUTER
-// A. HOME
+        // A. HOME
 router.get("/",routeGuard.privateAreas, rentalsController.getRentals)
 
-// B. profile
-//router.get("/profile", routeGuard.privateAreas, indexController.getProfile)
+        // B. Create
+router.get("/new",routeGuard.privateAreas, rentalsController.getNew)
+router.post("/new",rentalsController.postNew)
+
+
+        // C. Read
+router.get("/:id",routeGuard.privateAreas,rentalsController.getSingleRent)
+
+
+        // D. Update/Edit
+router.get("/:id/edit", routeGuard.privateAreas, rentalsController.editRent)
+router.post("/:id/edit", routeGuard.privateAreas,rentalsController.editRentForm)
+
+
+        // E. Remove
+router.post("/:id/delete",routeGuard.privateAreas, rentalsController.deleteRents)
+
+
 
 
 

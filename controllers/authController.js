@@ -1,96 +1,67 @@
 // ./controllers/authController
 const bcryptjs		= require("bcryptjs")
 const mongoose		= require("mongoose")
-
 const User			= require("./../models/User")
 
+
+
 exports.register = (req, res) => {
-
 	res.render("auth/register")
-
 }
 
-exports.registerForm = async (req, res) => {
 
-	// 1. VERIFICAR QUE LOS DATOS DEL FORMULARIO LLEGUEN AL CONTROLLER
+exports.registerForm = async (req, res) => {
 	const { username, email, password, date } = req.body
 
-
-	// --- VALIDACIONES ---
-	// A. VERIFICAR QUE NO HAYA ESPACIOS VACÍOS
 	if(!username || !email || !password){
-
 		return res.render("auth/register", {
 			errorMessage: "All fields all required."
 		})
 	}	
 
-	
 
-	// B. QUE LA CONTRASEA SEA SÓLIDA (Al menos 6 caracteres, un número, una minúscula y una mayúscula)
 	const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
-
 	if(!regex.test(password)){
-		
-		return res.render("auth/register", {
+			return res.render("auth/register", {
 			errorMessage: "Your password must include 6 characters, at least one number, one lowercase and one uppercase."
 		})
-
 	}
 
 
 
 	// 2. ENCRIPTAR CONTRASEÑA
-	// A. ¿Cuántas veces vamos a revolver la contraseña?
 	const salt = await bcryptjs.genSalt(10)
-
-	// B. Revolver la contraseña con el "salt"
 	const hashedPassword = await bcryptjs.hash(password, salt)
 
-	// C. GUARDAR EN BASE DE DATOS
-
+		// GUARDAR EN BASE DE DATOS
 	try {
 		const newUser = await User.create({
 			username,
 			email, 
 			password: hashedPassword
 		})
-	
-		console.log(newUser)
-	
 		return res.redirect("/auth/login")
 
-	} catch (error) {
-		
+	} catch (error) {		
 		console.log(error)
-
 		console.log(error.errors)
 
 		// CONFIRMAR SI EL ERROR VIENE DE BASE DE DATOS
-		if (error instanceof mongoose.Error.ValidationError){
-			
+		if (error instanceof mongoose.Error.ValidationError){			
 			return res.render("auth/register", {
 				errorMessage: "Por favor utiliza un correo electrónico real."
 			})
-		}
-
-		return
-
+		}	
 	}
-	
-
 }
 
 
 exports.login = (req, res) => {
-
 	res.render("auth/login")
-
 }
 
 exports.loginForm = async (req, res) => {
 
-	console.log(req.body)
 
 	// 1. OBTENCIÓN DE DATOS DEL FORMULARIO
 	const { email, password } = req.body
