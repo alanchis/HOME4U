@@ -18,10 +18,11 @@ exports.getRentals = async  (req, res) => {
 	}
 	
 	exports.postNew = async (req, res) => {
-	  const { name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+	  const { name, type, cost, city, neighborhood, location,  area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+	  console.log(req.body)
 	  try {
 		const newPropertyForRent = await Rentals.create({
-		  name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image
+		  name, type,cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description, image
 		});
 	
 	
@@ -51,12 +52,12 @@ exports.editRent = async (req, res) => {
   
   
   exports.editRentForm = async (req, res) => {
-  const { name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description , image } = req.body;
+  const { name, type, cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description , image } = req.body;
   const {id} = req.params
-  
+  console.log(req.body)
   await Rentals.findByIdAndUpdate(
 	id,
-	{ name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description , image },
+	{ name, type, cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description , image },
 	{ new: true }
   )
   return res.redirect(`/rentals/${id}`)}

@@ -47,6 +47,15 @@
           </div>
         </li>
 
+        <li>
+          <div class="flex items-center">
+            <a href="#" class="mr-4 text-sm font-medium text-gray-900"> {{rent.city}} </a>
+            <svg viewBox="0 0 6 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-auto text-gray-300">
+              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
+            </svg>
+          </div>
+        </li>
+
         <li class="text-sm">
           <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> {{rent.neighborhood}} </a>
         </li>
@@ -108,7 +117,7 @@
             <div class="mt-4 prose prose-sm text-gray-500">
               <p><strong>Area:</strong> {{rent.area}}</p>
               <p><strong>Bedrooms:</strong>  {{rent.bedrooms}}</p>
-              <p><strong>Bathrooms:</strong>  {{rent.badrooms}}</p>
+              <p><strong>Bathrooms:</strong>  {{rent.bathrooms}}</p>
               <p><strong>Parking spots:</strong>  {{rent.parking}}</p>
             </div>
           </div>
@@ -118,10 +127,16 @@
 
             <div class="mt-4 prose prose-sm text-gray-500">
                 <p>{{rent.description}}</p>
+                <hr>
             </div>
-            
+            <div>
+
+
+
+            </div>
           
           </div>
+
 
         </div>
         
@@ -129,3 +144,7 @@
     </div>
   </div>
 </div>
+
+              <center>
+                <iframe src={{rent.location}} width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </center>

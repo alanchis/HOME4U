@@ -62,6 +62,12 @@ const userSchema = mongoose.Schema({
         trim: true, 
         
     },
+    location: {
+        type: String,
+        trim: true,
+        required: true 
+        
+    },
     image: {
         type: String,
         trim: true, 

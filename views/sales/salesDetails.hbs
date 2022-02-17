@@ -47,6 +47,15 @@
           </div>
         </li>
 
+        <li>
+          <div class="flex items-center">
+            <a href="#" class="mr-4 text-sm font-medium text-gray-900"> {{sale.city}} </a>
+            <svg viewBox="0 0 6 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-auto text-gray-300">
+              <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
+            </svg>
+          </div>
+        </li>
+
         <li class="text-sm">
           <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> {{sale.neighborhood}} </a>
         </li>
@@ -87,6 +96,7 @@
         </div>
 
         <div class="mt-8 lg:col-span-5">
+
           <form>
             <button onclick="showAlert()" type="submit" class="mt-8 w-full bg-emerald-300 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="#">I'm Interested</a></button>
           </form>
@@ -119,7 +129,12 @@
             <div class="mt-4 prose prose-sm text-gray-500">
                 <p>{{sale.description}}</p>
             </div>
-            
+
+            <div>
+
+
+
+            </div>            
           
           </div>
 
@@ -129,3 +144,7 @@
     </div>
   </div>
 </div>
+
+              <center>
+                <iframe src={{sale.location}} width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </center>

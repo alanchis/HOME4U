@@ -18,11 +18,11 @@ exports.getNew = (req, res) => {
 }
 
 exports.postNew = async (req, res) => {
-  const { name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+  const { name, type,cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
 
   try {
     const newProperty = await Sales.create({
-      name, type,cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image });
+      name, type,cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description, image });
     return res.redirect("/sales");
 
   } catch (error) {
@@ -48,12 +48,12 @@ exports.editSale = async (req, res) => {
 
 exports.editSaleForm = async (req, res) => {
 const { 
-       name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image } = req.body;
+       name, type, cost, city, neighborhood,location,  area, bedrooms, bathrooms, parking, state, description, image } = req.body;
 const {id} = req.params
 
 await Sales.findByIdAndUpdate(
   id,
-  { name, type, cost, city, neighborhood, area, bedrooms, bathrooms, parking, state, description, image },
+  { name, type, cost, city, neighborhood, location, area, bedrooms, bathrooms, parking, state, description, image },
   { new: true }
 )
 return res.redirect(`/sales/${id}`)}

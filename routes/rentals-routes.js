@@ -10,7 +10,7 @@ const routeGuard = require("./../middlewares/route-guard")
 
 // 2. ROUTER
         // A. HOME
-router.get("/",routeGuard.privateAreas, rentalsController.getRentals)
+router.get("/", rentalsController.getRentals)
 
         // B. Create
 router.get("/new",routeGuard.privateAreas, rentalsController.getNew)

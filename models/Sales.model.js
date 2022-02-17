@@ -59,8 +59,12 @@ const userSchema = mongoose.Schema({
     },
     description: {
         type: String,
-         
-        
+   
+    },
+    location: {
+        type: String,
+        required: true
+   
     },
     image: {
         type: String,
