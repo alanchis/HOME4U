@@ -37,6 +37,7 @@ app.use("/", require("./routes/index"))
 app.use("/auth", require("./routes/auth"))
 app.use("/rentals", require("./routes/rentals-routes"))
 app.use("/sales", require("./routes/sales-routes"))
+app.use("/contact", require("./routes/contact-routes"))
 
 
 // 4. SERVIDOR

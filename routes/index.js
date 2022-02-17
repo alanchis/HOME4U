@@ -13,7 +13,6 @@ const routeGuard = require("./../middlewares/route-guard")
 // A. HOME
 router.get("/", indexController.getHome)
 
-router.get("/contact", indexController.getContact)
 
 router.get("/aboutus",indexController.getAboutUs)
 
